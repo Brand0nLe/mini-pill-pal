@@ -24,6 +24,7 @@ Please note that the application is currently in production and may undergo chan
 - Local Storage
 - Session Storage
 - Tailwind CSS
+- Headless UI (https://headlessui.com/)
 - FDA Drug Label API
 
 ## Setup

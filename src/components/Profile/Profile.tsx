@@ -1,70 +1,95 @@
-import React, { useState, useEffect } from 'react';
-import ProfileForm from './ProfileForm';
+import React, { useState } from 'react';
+
+interface UserProfile {
+  fullName: string;
+  allergies: string;
+  doctorInfo: string;
+  pharmacy: string;
+}
 
 interface ProfileProps {
   onLogout: () => void;
-  userEmail: string; 
+  userEmail: string;
+  profileData: UserProfile; // Add the profileData prop
 }
 
-interface UserProfile {
-  email: string;
-  profileData: {
-    fullName: string;
-    allergies: string;
-    doctorInfo: string;
-    pharmacy: string;
-  };
-}
+const Profile: React.FC<ProfileProps> = ({ onLogout, userEmail, profileData }) => {
+  const [fullName, setFullName] = useState(profileData.fullName);
+  const [allergies, setAllergies] = useState(profileData.allergies);
+  const [doctorInfo, setDoctorInfo] = useState(profileData.doctorInfo);
+  const [pharmacy, setPharmacy] = useState(profileData.pharmacy);
 
-const Profile: React.FC<ProfileProps> = ({ onLogout, userEmail }) => {
-  const [profileData, setProfileData] = useState<UserProfile>({
-    email: '',
-    profileData: {
-      fullName: '',
-      allergies: '',
-      doctorInfo: '',
-      pharmacy: ''
-    }
-  });
-
-  useEffect(() => {
-    const storedProfiles = localStorage.getItem('profiles');
-    if (storedProfiles) {
-      const profiles: UserProfile[] = JSON.parse(storedProfiles);
-      const userProfile = profiles.find((profile) => profile.email === userEmail);
-      if (userProfile) {
-        setProfileData(userProfile);
-      }
-    }
-  }, [userEmail]);
-
-  const handleSaveProfile = (formData: any) => {
-    console.log(formData);
-    const newProfileData: UserProfile = {
-      email: userEmail,
-      profileData: formData
+  const handleSubmitProfile = (e: React.FormEvent) => {
+    e.preventDefault();
+    const updatedProfileData: UserProfile = {
+      fullName,
+      allergies,
+      doctorInfo,
+      pharmacy,
     };
-    setProfileData(newProfileData);
-
-    const storedProfiles = localStorage.getItem('profiles');
-    if (storedProfiles) {
-      const profiles: UserProfile[] = JSON.parse(storedProfiles);
-      const updatedProfiles = profiles.map((profile) =>
-        profile.email === userEmail ? newProfileData : profile
-      );
-      localStorage.setItem('profiles', JSON.stringify(updatedProfiles));
-    }
+    console.log(updatedProfileData); // Do something with the updated profile data
   };
 
   return (
-    <div className="my-4">
-      <h2 className="text-lg font-bold mb-2">Profile</h2>
-      <div className="bg-white shadow-md rounded px-8 py-6 mb-4">
-        <ProfileForm onSaveProfile={handleSaveProfile} profileData={profileData.profileData} />
-      </div>
-      <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={onLogout}>
-        Logout
-      </button>
+    <div>
+      <h2>Welcome, {userEmail}!</h2>
+      <h3>Profile</h3>
+      <form onSubmit={handleSubmitProfile}>
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="fullName">
+            Full Name
+          </label>
+          <input
+            className="border border-gray-300 rounded w-full py-2 px-3"
+            type="text"
+            id="fullName"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="allergies">
+            Allergies
+          </label>
+          <textarea
+            className="border border-gray-300 rounded w-full py-2 px-3"
+            id="allergies"
+            value={allergies}
+            onChange={(e) => setAllergies(e.target.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="doctorInfo">
+            Doctor Info
+          </label>
+          <textarea
+            className="border border-gray-300 rounded w-full py-2 px-3"
+            id="doctorInfo"
+            value={doctorInfo}
+            onChange={(e) => setDoctorInfo(e.target.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="pharmacy">
+            Pharmacy
+          </label>
+          <input
+            className="border border-gray-300 rounded w-full py-2 px-3"
+            type="text"
+            id="pharmacy"
+            value={pharmacy}
+            onChange={(e) => setPharmacy(e.target.value)}
+          />
+        </div>
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+          type="submit"
+        >
+          Save Profile
+        </button>
+      </form>
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
 };
