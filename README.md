@@ -32,23 +32,16 @@ To run this project, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Install dependencies by running `npm install` in the project directory.
-3. Obtain an API key from the FDA Drug Label API by following the instructions in their documentation.
-4. Create a new file named `.env` in the root directory of the project.
-5. In the `.env` file, add the following line and replace `YOUR_API_KEY` with your actual FDA Drug Label API key: REACT_APP_FDA_API_KEY=YOUR_API_KEY
-6. Start the development server by running `npm start`.
-7. Open `http://localhost:3000` in your web browser to view the site.
-
-> **Note:** Make sure to keep your API key confidential and do not commit the `.env` file to any public repositories. The `.env` file is already added to the `.gitignore`, so it won't be uploaded to the repository.
+3. Start the development server by running `npm start`.
+4. Open `http://localhost:3000` in your web browser to view the site.
 
 ## FDA Drug Label API
 
-The FDA Drug Label API provides access to drug label information, including names, strengths, dosage forms, and more. To use this API in the Medication Reminder App, you need to obtain an API key from the FDA.
+The FDA Drug Label API provides access to drug label information, including names, strengths, dosage forms, and more. It is a public API and does not require an API key or authentication.
 
 To get started with the FDA Drug Label API:
 
 1. Visit the [FDA Drug Label API Documentation](https://urlgoeshere) to learn more about the API and its capabilities.
-2. Follow the instructions provided in the documentation to obtain an API key.
-3. Once you have obtained the API key, update the `.env` file with the API key as described in the Setup section above.
 
 For more details on using the FDA Drug Label API, refer to the [FDA Drug Label API Documentation](https://urlgoeshere).
 
