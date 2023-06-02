@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AlertManager from './components/Alert/AlertManager';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-
+    <div>
+      {/* Other components */}
+      <AlertManager />
     </div>
   );
-}
+};
 
 export default App;
