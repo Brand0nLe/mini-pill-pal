@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import Registration from '../Registration/Registration';
-import './Login.css';
 
 interface LoginProps {
   onLogin: (email: string, password: string) => void;
@@ -17,11 +16,11 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   return (
     <div className="my-4">
       <div className="w-full max-w-xs m-auto">
-        <h2 className="text-lg font-bold mb-2">{showRegistration ? 'Registration' : 'Login'}</h2>
         {showRegistration ? (
           <Registration onRegistrationSuccess={handleToggleRegistration} />
         ) : (
           <>
+            <h2 className="text-lg font-bold mb-2">Login</h2>
             <LoginForm onLogin={onLogin} />
             <p className="text-sm">
               Don't have an account?{' '}
