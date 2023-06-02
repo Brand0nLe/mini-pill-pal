@@ -14,8 +14,15 @@ const App: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [medicationList, setMedicationList] = useState<Medication[]>([]);
 
-  const handleLogin = () => {
-    setLoggedIn(true);
+  const handleLogin = (email: string, password: string) => {
+    const storedEmail = localStorage.getItem('email');
+    const storedPassword = localStorage.getItem('password');
+
+    if (email === storedEmail && password === storedPassword) {
+      setLoggedIn(true);
+    } else {
+      alert("Invalid email or password."); // Inform user of invalid credentials
+    }
   };
 
   const handleLogout = () => {

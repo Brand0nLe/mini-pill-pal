@@ -21,8 +21,12 @@ const Profile: React.FC<ProfileProps> = ({ onLogout }) => {
   return (
     <div className="my-4">
       <h2 className="text-lg font-bold mb-2">Profile</h2>
-      <ProfileForm onSaveProfile={handleSaveProfile} profileData={profileData} />
-      <button onClick={onLogout}>Logout</button>
+      <div className="bg-white shadow-md rounded px-8 py-6 mb-4">
+        <ProfileForm onSaveProfile={handleSaveProfile} profileData={profileData} />
+      </div>
+      <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onClick={onLogout}>
+        Logout
+      </button>
     </div>
   );
 };

@@ -15,16 +15,21 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
   return (
     <div className="my-4">
-      <div>
-        <h2 className="text-lg font-bold mb-2">Login</h2>
-        <LoginForm onLogin={onLogin} />
-        <p className="text-sm">
-          Don't have an account?{' '}
-          <button className="link-button" onClick={handleToggleRegistration}>
-            Register here
-          </button>
-        </p>
-        {showRegistration && <Registration />}
+      <div className="w-full max-w-xs m-auto">
+        <h2 className="text-lg font-bold mb-2">{showRegistration ? 'Registration' : 'Login'}</h2>
+        {showRegistration ? (
+          <Registration onRegistrationSuccess={handleToggleRegistration} />
+        ) : (
+          <>
+            <LoginForm onLogin={onLogin} />
+            <p className="text-sm">
+              Don't have an account?{' '}
+              <button className="link-button text-blue-500 hover:text-blue-700" onClick={handleToggleRegistration}>
+                Register here
+              </button>
+            </p>
+          </>
+        )}
       </div>
     </div>
   );
