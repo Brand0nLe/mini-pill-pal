@@ -10,6 +10,12 @@ Mini Pill Pal is a one-page desktop application built with React.js, TypeScript,
 - Refill tracker to manage pill count and track when refills are needed
 - Login functionality to securely store user information and associate it with their session/local storage
 
+## Deployment
+
+The Medication Reminder App is deployed on Azure and can be accessed using the following link:
+[Live Demo Coming Soon](https://your-azure-app-url.com)
+Please note that the application is currently in production and may undergo changes and updates.
+
 ## Technologies Used
 
 - React.js
@@ -18,14 +24,6 @@ Mini Pill Pal is a one-page desktop application built with React.js, TypeScript,
 - Session Storage
 - Tailwind CSS
 - FDA Drug Label API
-
-## Deployment
-
-The Medication Reminder App is deployed on Azure and can be accessed using the following link:
-
-[Live Demo Coming Soon](https://your-azure-app-url.com)
-
-Please note that the application is currently in production and may undergo changes and updates.
 
 ## Setup
 
