@@ -1,19 +1,27 @@
 import React from 'react';
+import Alert from './Alert';
 
 interface AlertModalProps {
-  message: string;
-  onClose: () => void;
+  isOpen: boolean;
+  toggleModal: () => void;
+  alerts: { id: number; message: string }[];
 }
 
-const AlertModal: React.FC<AlertModalProps> = ({ message, onClose }) => {
+const AlertModal: React.FC<AlertModalProps> = ({ isOpen, toggleModal, alerts }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8">
-        <h2 className="text-xl mb-4">Alert</h2>
-        <p>{message}</p>
-        <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded" onClick={onClose}>
-          Close
-        </button>
+    <div className={`modal ${isOpen ? 'block' : 'hidden'}`}>
+      <div className="modal-overlay" onClick={toggleModal}></div>
+      <div className="modal-content">
+        <div className="bg-white p-4 shadow rounded">
+          <h2 className="text-lg font-bold mb-4">Alerts</h2>
+          {alerts.map(alert => (
+            <Alert
+              key={alert.id}
+              message={alert.message}
+              onClose={() => console.log('Close alert')}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

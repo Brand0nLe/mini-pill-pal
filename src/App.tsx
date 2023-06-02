@@ -1,11 +1,22 @@
 import React from 'react';
-import AlertManager from './components/Alert/AlertManager';
+import Profile from './components/Profile/Profile';
+import MedicationForm from './components/MedicationForm/MedicationForm';
+import RefillTracker from './components/RefillTracker/RefillTracker';
+import Login from './components/Login/Login';
 
 const App: React.FC = () => {
   return (
     <div>
-      {/* Other components */}
-      <AlertManager />
+      {/* Render the components based on authentication */}
+      {true ? (
+        <>
+          <Profile />
+          <MedicationForm />
+          <RefillTracker />
+        </>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 };
