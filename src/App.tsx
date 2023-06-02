@@ -21,7 +21,7 @@ const App: React.FC = () => {
     if (email === storedEmail && password === storedPassword) {
       setLoggedIn(true);
     } else {
-      alert("Invalid email or password."); // Inform user of invalid credentials
+      alert("Invalid email or password."); 
     }
   };
 
@@ -33,15 +33,15 @@ const App: React.FC = () => {
     setMedicationList([...medicationList, medication]);
   };
 
+  const userEmail = localStorage.getItem('email') || ''; 
+
   return (
     <div>
-      {/* Render the components based on authentication */}
       {loggedIn ? (
         <>
-          <Profile onLogout={handleLogout} />
+          <Profile onLogout={handleLogout} userEmail={userEmail} />
           <MedicationForm onAddMedication={handleAddMedication} />
           <RefillTracker medicationList={medicationList} />
-        
         </>
       ) : (
         <Login onLogin={handleLogin} />

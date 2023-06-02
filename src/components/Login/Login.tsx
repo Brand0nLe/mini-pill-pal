@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import Registration from '../Registration/Registration';
+import './Login.css';
 
 interface LoginProps {
   onLogin: (email: string, password: string) => void;
