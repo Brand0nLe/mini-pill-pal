@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Mini Pill Pal - IN DEVELOPMENT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mini Pill Pal is a one-page desktop application built with React.js, TypeScript, and Tailwind CSS. It helps users keep track of their medications by providing reminders, medication details, refill tracking, and profile management. The application utilizes the FDA Drug Label API to fetch accurate and up-to-date drug information, including names, strengths, dosage forms, and more.
 
-## Available Scripts
+## Features (Currently planned and subject to change)
 
-In the project directory, you can run:
+- Profile section with the option to upload a profile picture
+- Medication form for entering medication details, including name, strength, and directions
+- Alerts and reminders for upcoming medication schedules
+- Refill tracker to manage pill count and track when refills are needed
+- Login functionality to securely store user information and associate it with their session/local storage
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React.js
+- TypeScript
+- Local Storage
+- Session Storage
+- Tailwind CSS
+- FDA Drug Label API
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Setup
 
-### `npm test`
+To run this project, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine.
+2. Install dependencies by running `npm install` in the project directory.
+3. Obtain an API key from the FDA Drug Label API by following the instructions in their documentation.
+4. Create a new file named `.env` in the root directory of the project.
+5. In the `.env` file, add the following line and replace `YOUR_API_KEY` with your actual FDA Drug Label API key: REACT_APP_FDA_API_KEY=YOUR_API_KEY
+6. Start the development server by running `npm start`.
+7. Open `http://localhost:3000` in your web browser to view the site.
 
-### `npm run build`
+> **Note:** Make sure to keep your API key confidential and do not commit the `.env` file to any public repositories. The `.env` file is already added to the `.gitignore`, so it won't be uploaded to the repository.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## FDA Drug Label API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The FDA Drug Label API provides access to drug label information, including names, strengths, dosage forms, and more. To use this API in the Medication Reminder App, you need to obtain an API key from the FDA.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get started with the FDA Drug Label API:
 
-### `npm run eject`
+1. Visit the [FDA Drug Label API Documentation](https://urlgoeshere) to learn more about the API and its capabilities.
+2. Follow the instructions provided in the documentation to obtain an API key.
+3. Once you have obtained the API key, update the `.env` file with the API key as described in the Setup section above.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For more details on using the FDA Drug Label API, refer to the [FDA Drug Label API Documentation](https://urlgoeshere).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Disclaimer
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project, Mini Pill Pal, is a personal and educational endeavor. It utilizes the FDA Drug Label API to fetch drug information, but the app itself is not affiliated with or endorsed by the FDA. This project is purely for the purpose of practicing and developing my skills in front-end development, with a focus on React.js and TypeScript. It is also an exercise in learning to integrate and use third-party APIs. All medication information is provided by the FDA Drug Label API, and this application claims no ownership or responsibility for this data.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+As this is a personal project to develop my skills, there are no plans for commercial use.
 
-## Learn More
+## Contact
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you have any questions or would like to know more about my project, feel free to reach out to me.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Email: [brandonctle.dev@gmail.com](mailto:brandonctle.dev@gmail.com)
+- LinkedIn: [https://www.linkedin.com/in/brandonctle](https://www.linkedin.com/in/brandonctle/)
+- Portfolio: [https://brandonle.azurewebsites.net](https://brandonle.azurewebsites.net/)
+
+Thank you for your interest in Mini Pill Pal!
