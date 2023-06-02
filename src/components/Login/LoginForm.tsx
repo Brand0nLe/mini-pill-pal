@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface LoginFormProps {
-  onLogin: (formData: any) => void;
+  onLogin: (email: string, password: string) => void;
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
@@ -10,8 +10,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const formData = { email, password };
-    onLogin(formData);
+    onLogin(email, password);
     setEmail('');
     setPassword('');
   };
