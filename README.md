@@ -14,6 +14,7 @@ Mini Pill Pal is a one-page desktop application built with React.js, TypeScript,
 
 The application is deployed on Azure and can be accessed using the following link:
 [Live Demo Coming Soon](https://your-azure-app-url.com)
+
 Please note that the application is currently in production and may undergo changes and updates.
 
 ## Technologies Used
