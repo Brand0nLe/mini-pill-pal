@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Profile from './components/Profile/Profile';
 import MedicationForm from './components/MedicationForm/MedicationForm';
 import RefillTracker from './components/RefillTracker/RefillTracker';
 import Login from './components/Login/Login';
 
+interface Medication {
+  name: string;
+  strength: string;
+  directions: string;
+}
+
 const App: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [medicationList, setMedicationList] = useState<Medication[]>([]);
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+  };
+
+  const handleAddMedication = (medication: Medication) => {
+    setMedicationList([...medicationList, medication]);
+  };
+
   return (
     <div>
       {/* Render the components based on authentication */}
-      {true ? (
+      {loggedIn ? (
         <>
-          <Profile />
-          <MedicationForm />
-          <RefillTracker />
+          <Profile onLogout={handleLogout} />
+          <MedicationForm onAddMedication={handleAddMedication} />
+          <RefillTracker medicationList={medicationList} />
+        
         </>
       ) : (
-        <Login />
+        <Login onLogin={handleLogin} />
       )}
     </div>
   );

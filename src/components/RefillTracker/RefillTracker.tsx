@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import RefillTrackerForm from './RefillTrackerForm';
 
-const RefillTracker: React.FC = () => {
+interface RefillTrackerProps {
+  medicationList: Medication[];
+}
+
+interface Medication {
+  name: string;
+  strength: string;
+  directions: string;
+}
+
+const RefillTracker: React.FC<RefillTrackerProps> = ({ medicationList }) => {
   const [pillCount, setPillCount] = useState(0);
 
   const handleRefill = (count: number) => {

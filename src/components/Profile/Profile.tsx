@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import ProfileForm from './ProfileForm';
 
-const Profile: React.FC = () => {
+interface ProfileProps {
+  onLogout: () => void;
+}
+
+const Profile: React.FC<ProfileProps> = ({ onLogout }) => {
   const [profileData, setProfileData] = useState({
     fullName: '',
     allergies: '',
@@ -10,7 +14,6 @@ const Profile: React.FC = () => {
   });
 
   const handleSaveProfile = (formData: any) => {
-    // Handle save profile logic
     console.log(formData);
     setProfileData(formData);
   };
@@ -19,6 +22,7 @@ const Profile: React.FC = () => {
     <div className="my-4">
       <h2 className="text-lg font-bold mb-2">Profile</h2>
       <ProfileForm onSaveProfile={handleSaveProfile} profileData={profileData} />
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
 };
