@@ -37,9 +37,9 @@ To run this project, follow these steps:
 
 ## FDA Drug Label API
 
-The FDA Drug Label API provides access to drug label information, including names, strengths, dosage forms, and more. To use this API in the Medication Reminder App, you can visit the [FDA Drug Label API Documentation](https://api.fda.gov/drug/label) to learn more about the API and its capabilities.
+The FDA Drug Label API provides access to drug label information, including names, strengths, dosage forms, and more. To use this API in the Medication Reminder App, you can visit the [FDA Drug Label API Documentation](https://open.fda.gov/apis/drug/label/) to learn more about the API and its capabilities.
 
-For more details on using the FDA Drug Label API, refer to the [FDA Drug Label API Documentation](https://api.fda.gov/drug/label).
+For more details on using the FDA Drug Label API, refer to the [FDA Drug Label API Documentation](https://open.fda.gov/apis/drug/label/).
 
 ## Disclaimer
 
