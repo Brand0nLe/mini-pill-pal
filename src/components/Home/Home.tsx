@@ -85,8 +85,8 @@ const Home: React.FC = () => {
         </>
       ) : (
         <>
-          <Login onLogin={handleLogin} onRegistrationSuccess={() => { }} />
-          <Registration onRegistration={handleRegistration} onLoginSuccess={() => { }} />
+          <Login onLogin={handleLogin} onRegistrationSuccess={() => {}} />
+          <Registration onRegistration={handleRegistration} onLoginSuccess={() => {}} />
         </>
       )}
     </div>
